@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		FFE0FEE81D10834700376A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEE71D10834700376A50 /* AppDelegate.swift */; };
-		FFE0FEEA1D10834700376A50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEE91D10834700376A50 /* ViewController.swift */; };
 		FFE0FEED1D10834700376A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE0FEEB1D10834700376A50 /* Main.storyboard */; };
 		FFE0FEEF1D10834700376A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE0FEEE1D10834700376A50 /* Assets.xcassets */; };
 		FFE0FEF21D10834700376A50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE0FEF01D10834700376A50 /* LaunchScreen.storyboard */; };
+		FFE0FEFA1D10975000376A50 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEF91D10975000376A50 /* LogInViewController.swift */; };
+		FFE0FEFC1D10976200376A50 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */; };
+		FFE0FEFE1D10979100376A50 /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */; };
+		FFE0FF001D10979C00376A50 /* DetailGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFF1D10979C00376A50 /* DetailGroupTableViewController.swift */; };
+		FFE0FF021D1097AE00376A50 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */; };
+		FFE0FF061D1097DB00376A50 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF051D1097DB00376A50 /* MessageController.swift */; };
+		FFE0FF081D1097E700376A50 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF071D1097E700376A50 /* UserController.swift */; };
+		FFE0FF0A1D1097F300376A50 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF091D1097F300376A50 /* FirebaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FFE0FEE41D10834700376A50 /* BevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE0FEE71D10834700376A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFE0FEE91D10834700376A50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFE0FEEC1D10834700376A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFE0FEEE1D10834700376A50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFE0FEF11D10834700376A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFE0FEF31D10834700376A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFE0FEF91D10975000376A50 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
+		FFE0FEFF1D10979C00376A50 /* DetailGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGroupTableViewController.swift; sourceTree = "<group>"; };
+		FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		FFE0FF051D1097DB00376A50 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		FFE0FF071D1097E700376A50 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		FFE0FF091D1097F300376A50 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +69,44 @@
 			isa = PBXGroup;
 			children = (
 				FFE0FEE71D10834700376A50 /* AppDelegate.swift */,
-				FFE0FEE91D10834700376A50 /* ViewController.swift */,
+				FFE0FF041D1097BC00376A50 /* View Controllers */,
+				FFE0FF0B1D1097F900376A50 /* Controllers */,
 				FFE0FEEB1D10834700376A50 /* Main.storyboard */,
 				FFE0FEEE1D10834700376A50 /* Assets.xcassets */,
 				FFE0FEF01D10834700376A50 /* LaunchScreen.storyboard */,
 				FFE0FEF31D10834700376A50 /* Info.plist */,
 			);
 			path = BevChat;
+			sourceTree = "<group>";
+		};
+		FFE0FF031D1097B500376A50 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		FFE0FF041D1097BC00376A50 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFE0FEF91D10975000376A50 /* LogInViewController.swift */,
+				FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */,
+				FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */,
+				FFE0FEFF1D10979C00376A50 /* DetailGroupTableViewController.swift */,
+				FFE0FF031D1097B500376A50 /* Cell */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FFE0FF0B1D1097F900376A50 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFE0FF051D1097DB00376A50 /* MessageController.swift */,
+				FFE0FF071D1097E700376A50 /* UserController.swift */,
+				FFE0FF091D1097F300376A50 /* FirebaseController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +180,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFE0FEEA1D10834700376A50 /* ViewController.swift in Sources */,
+				FFE0FF0A1D1097F300376A50 /* FirebaseController.swift in Sources */,
+				FFE0FEFC1D10976200376A50 /* CreateAccountViewController.swift in Sources */,
+				FFE0FF001D10979C00376A50 /* DetailGroupTableViewController.swift in Sources */,
+				FFE0FF081D1097E700376A50 /* UserController.swift in Sources */,
+				FFE0FF061D1097DB00376A50 /* MessageController.swift in Sources */,
+				FFE0FEFE1D10979100376A50 /* GroupListTableViewController.swift in Sources */,
+				FFE0FEFA1D10975000376A50 /* LogInViewController.swift in Sources */,
 				FFE0FEE81D10834700376A50 /* AppDelegate.swift in Sources */,
+				FFE0FF021D1097AE00376A50 /* MessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +338,7 @@
 				FFE0FEF81D10834700376A50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
