@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03F9EA3826A63F4B6087C784 /* Pods_BevChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D5BCB1B30F96A3678C4532 /* Pods_BevChat.framework */; };
+		FFADEAB91D1204F30081618B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFADEAB81D1204F30081618B /* GoogleService-Info.plist */; };
 		FFE0FEE81D10834700376A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEE71D10834700376A50 /* AppDelegate.swift */; };
 		FFE0FEED1D10834700376A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE0FEEB1D10834700376A50 /* Main.storyboard */; };
 		FFE0FEEF1D10834700376A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE0FEEE1D10834700376A50 /* Assets.xcassets */; };
@@ -22,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00D5BCB1B30F96A3678C4532 /* Pods_BevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54455ECC0E065D4D8E10EE4D /* Pods-BevChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BevChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-BevChat/Pods-BevChat.release.xcconfig"; sourceTree = "<group>"; };
+		C80C2F360073526D42134E62 /* Pods-BevChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BevChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BevChat/Pods-BevChat.debug.xcconfig"; sourceTree = "<group>"; };
+		FFADEAB81D1204F30081618B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFE0FEE41D10834700376A50 /* BevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE0FEE71D10834700376A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFE0FEEC1D10834700376A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F9EA3826A63F4B6087C784 /* Pods_BevChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DE6625D83ACCF305AC76CE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00D5BCB1B30F96A3678C4532 /* Pods_BevChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC038E0072CD493CFC5A826E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C80C2F360073526D42134E62 /* Pods-BevChat.debug.xcconfig */,
+				54455ECC0E065D4D8E10EE4D /* Pods-BevChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FFE0FEDB1D10834700376A50 = {
 			isa = PBXGroup;
 			children = (
 				FFE0FEE61D10834700376A50 /* BevChat */,
 				FFE0FEE51D10834700376A50 /* Products */,
+				BC038E0072CD493CFC5A826E /* Pods */,
+				1DE6625D83ACCF305AC76CE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +100,7 @@
 				FFE0FEEB1D10834700376A50 /* Main.storyboard */,
 				FFE0FEEE1D10834700376A50 /* Assets.xcassets */,
 				FFE0FEF01D10834700376A50 /* LaunchScreen.storyboard */,
+				FFADEAB81D1204F30081618B /* GoogleService-Info.plist */,
 				FFE0FEF31D10834700376A50 /* Info.plist */,
 			);
 			path = BevChat;
@@ -116,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFE0FEF61D10834700376A50 /* Build configuration list for PBXNativeTarget "BevChat" */;
 			buildPhases = (
+				D9A5DB14DACE027A3C9234FF /* [CP] Check Pods Manifest.lock */,
 				FFE0FEE01D10834700376A50 /* Sources */,
 				FFE0FEE11D10834700376A50 /* Frameworks */,
 				FFE0FEE21D10834700376A50 /* Resources */,
+				9823D93E30C1EFB4F66C0989 /* [CP] Embed Pods Frameworks */,
+				D7A4998AB037C86D768961C6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,12 +198,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFE0FEF21D10834700376A50 /* LaunchScreen.storyboard in Resources */,
+				FFADEAB91D1204F30081618B /* GoogleService-Info.plist in Resources */,
 				FFE0FEEF1D10834700376A50 /* Assets.xcassets in Resources */,
 				FFE0FEED1D10834700376A50 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9823D93E30C1EFB4F66C0989 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BevChat/Pods-BevChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7A4998AB037C86D768961C6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BevChat/Pods-BevChat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A5DB14DACE027A3C9234FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFE0FEE01D10834700376A50 /* Sources */ = {
@@ -299,6 +378,7 @@
 		};
 		FFE0FEF71D10834700376A50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C80C2F360073526D42134E62 /* Pods-BevChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BevChat/Info.plist;
@@ -310,6 +390,7 @@
 		};
 		FFE0FEF81D10834700376A50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54455ECC0E065D4D8E10EE4D /* Pods-BevChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BevChat/Info.plist;

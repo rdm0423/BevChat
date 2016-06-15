@@ -1,0 +1,6 @@
+framework module Pods_BevChat {
+  umbrella header "Pods-BevChat-umbrella.h"
+
+  export *
+  module * { export * }
+}
