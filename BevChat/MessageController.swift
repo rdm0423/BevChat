@@ -8,3 +8,29 @@
 
 import Foundation
 
+class MessageController {
+    
+    func createMessage() {
+        
+    }
+    
+    func addMessageToGroup() {
+        
+        
+    }
+    
+    func fetchAllMessages(group: Group) -> [Message] {
+        
+        
+    }
+    
+    func getAllUsersForGroup() {
+        
+        
+    }
+    
+    func observeMessageForIdentifier(identifier: String, completion: [Message]) {
+        
+        
+    }
+}
