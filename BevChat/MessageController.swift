@@ -19,10 +19,10 @@ class MessageController {
         
     }
     
-    func fetchAllMessages(group: Group) -> [Message] {
-        
-        
-    }
+//    func fetchAllMessages(group: Group) -> [Message] {
+//        
+//        
+//    }
     
     func getAllUsersForGroup() {
         
