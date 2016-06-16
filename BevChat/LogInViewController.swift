@@ -27,7 +27,12 @@ class LogInViewController: UIViewController {
     
     @IBAction func loginButtonTapped(sender: AnyObject) {
         
-        
+        if let email = emailTextField.text, password = passwordTextField.text {
+            UserController.authUser(email, password: password, completion: { (user) in
+                print(user)
+                self.performSegueWithIdentifier("toHomeSegue", sender: self)
+            })
+        }
     }
     
     @IBAction func createButtonTapped(sender: AnyObject) {
@@ -35,7 +40,7 @@ class LogInViewController: UIViewController {
 
     @IBAction func forgotButtonTapped(sender: AnyObject) {
         
-        
+        // code for reset password email link
     }
     
     /*
