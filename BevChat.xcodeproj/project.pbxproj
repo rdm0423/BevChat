@@ -191,6 +191,7 @@
 				TargetAttributes = {
 					FFE0FEE31D10834700376A50 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8859BW6G67;
 					};
 				};
 			};
@@ -405,6 +406,7 @@
 			baseConfigurationReference = C80C2F360073526D42134E62 /* Pods-BevChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BevChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rossmcilwaine.BevChat;
@@ -417,6 +419,7 @@
 			baseConfigurationReference = 54455ECC0E065D4D8E10EE4D /* Pods-BevChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BevChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rossmcilwaine.BevChat;
