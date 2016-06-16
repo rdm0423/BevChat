@@ -35,11 +35,12 @@ class User: FirebaseType {
         return jsonDictionary
     }
     
-    init(firstName: String, lastName: String, displayName: String, profilePhoto: UIImage) {
+    init(firstName: String, lastName: String, displayName: String, profilePhoto: UIImage, identifier: String) {
         self.firstName = firstName
         self.lastName = lastName
         self.displayName = displayName
         self.profilePhoto = profilePhoto
+        self.identifier = identifier
     }
     
     required init?(dictionary: [String : AnyObject], identifier: String) {

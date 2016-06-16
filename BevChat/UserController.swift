@@ -13,13 +13,13 @@ class UserController {
     
     static var currentUser: User?
     
-    static func createUser(name: String, email: String, password: String, completion: (user: User?) -> Void) {
+    static func createUser(firstName: String, lastName: String, displayName: String, profilePhoto: UIImage, email: String, password: String, completion: (user: User?) -> Void) {
         FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
             if let error = error {
                 print("There was error while creating user: \(error.localizedDescription)")
                 completion(user: nil)
             } else if let firebaseUser = user {
-                var user = User(firstName: <#T##String#>, lastName: <#T##String#>, displayName: <#T##String#>, profilePhoto: <#T##UIImage#>)
+                var user = User(firstName: firstName, lastName: lastName, displayName: displayName, profilePhoto: profilePhoto, identifier: firebaseUser.uid)
                 user.save()
                 UserController.currentUser = user
                 completion(user: user)
