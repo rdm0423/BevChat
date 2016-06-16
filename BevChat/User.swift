@@ -59,8 +59,6 @@ class User: FirebaseType {
             self.profilePhoto = UIImage(named: "stockUser")!
             
         }
-        
-        
         self.identifier = identifier
     }
     
