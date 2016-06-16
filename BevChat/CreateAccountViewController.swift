@@ -26,6 +26,33 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func addProfileImageButtonTapped(sender: AnyObject) {
         
+        imageSelectionAlert()
+    }
+    
+    @IBAction func createAccountButtonTapped(sender: AnyObject) {
+        
+        textFieldVerifyForTextEntry()
+        
+        if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text, profileImageView = UIImage.init(base64: "") {
+            
+            // call create user (create user authenticates) ****
+            
+            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: profileImageView, email: email, password: password, completion: { (user) in
+                
+                self.performSegueWithIdentifier("toHomeSegue", sender: self)
+            })
+        }
+    }
+
+    @IBAction func alreadyHaveAccountButtonTapped(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: - Image Selection Controller
+    
+    func imageSelectionAlert() {
+        
         // present action sheet camera & library
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -38,50 +65,20 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
             imagePicker.sourceType = .PhotoLibrary
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
-        
         let cameraAction = UIAlertAction(title: "camera", style: .Default) { (_) in
             imagePicker.sourceType = .Camera
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
-        
         actionSheet.addAction(cancelAction)
         
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
             actionSheet.addAction(cameraAction)
         }
-        
         if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary) {
             actionSheet.addAction(photoLibraryAction)
         }
-        
         presentViewController(actionSheet, animated: true, completion: nil)
     }
-    
-    @IBAction func createAccountButtonTapped(sender: AnyObject) {
-        
-        textFieldVerifyForTextEntry()
-        
-        if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text, profileImageView = UIImage.init(base64: "") {
-            
-            
-            // *** Also need to create the user with the other saved information -- just call create user (create user authenticates) ****
-            
-            // *** be sure cannot create unless matching password & all text fields are entered**
-            
-            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: profileImageView, email: email, password: password, completion: { (user) in
-                
-                self.performSegueWithIdentifier("toHomeSegue", sender: self)
-            })
-        }
-    }
-
-    @IBAction func alreadyHaveAccountButtonTapped(sender: AnyObject) {
-        // segue in storyboard exists to take to LogIn VC
-        
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    // MARK: - Image Selection Controller
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
@@ -205,6 +202,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+    
     
     
     /*
