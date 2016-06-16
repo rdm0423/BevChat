@@ -58,7 +58,6 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         imagePicker.delegate = self
         
         let actionSheet = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .ActionSheet)
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .Default) { (_) in
@@ -93,7 +92,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     func textFieldVerifyForTextEntry() {
         
-        if displayNameTextField.text == nil || firstNameTextField.text == nil || lastNameTextField.text == nil || emailTextField.text == nil || passwordTextField.text == nil || confirmPasswordTextField.text == nil {
+        if displayNameTextField.text == "" || firstNameTextField.text == "" || lastNameTextField.text == "" || emailTextField.text == "" || passwordTextField.text == "" || confirmPasswordTextField.text == "" {
             // did not enter text into all fields
             emptyTextFieldErrorAlert()
         } else if isValidEmail("\(emailTextField.text)") == false {
