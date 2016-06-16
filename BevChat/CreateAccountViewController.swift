@@ -77,6 +77,8 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
 
     @IBAction func alreadyHaveAccountButtonTapped(sender: AnyObject) {
         // segue in storyboard exists to take to LogIn VC
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Image Selection Controller
