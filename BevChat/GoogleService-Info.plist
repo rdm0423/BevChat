@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>719066360521-gbffecbr1nant9c77megneiqr3smertj.apps.googleusercontent.com</string>
+	<string>939794625627-m064eprmf52ivtu1mbh1t6tp5fmi6rem.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.719066360521-gbffecbr1nant9c77megneiqr3smertj</string>
+	<string>com.googleusercontent.apps.939794625627-m064eprmf52ivtu1mbh1t6tp5fmi6rem</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDInFvGpo3symfk4m92a57MojikjhYGYRo</string>
+	<string>AIzaSyDIC7UHNuvPcT5Vp3AvXBpbG5wiKrqfii4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>719066360521</string>
+	<string>939794625627</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.rossmcilwaine.BevChat</string>
 	<key>PROJECT_ID</key>
-	<string>project-3752363635583710819</string>
+	<string>project-2673363017413772911</string>
 	<key>STORAGE_BUCKET</key>
-	<string>project-3752363635583710819.appspot.com</string>
+	<string>project-2673363017413772911.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:719066360521:ios:d2486278ae0b3c81</string>
+	<string>1:939794625627:ios:d2486278ae0b3c81</string>
 	<key>DATABASE_URL</key>
-	<string>https://project-3752363635583710819.firebaseio.com</string>
+	<string>https://project-2673363017413772911.firebaseio.com</string>
 </dict>
 </plist>

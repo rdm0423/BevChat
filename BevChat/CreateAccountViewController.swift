@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -18,10 +19,18 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    var signedIn = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if let user = FIRAuth.auth()?.currentUser {
+//            self.signedIn(user)
+        }
     }
     
     @IBAction func addProfileImageButtonTapped(sender: AnyObject) {
@@ -31,22 +40,54 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     @IBAction func createAccountButtonTapped(sender: AnyObject) {
         
-        textFieldVerifyForTextEntry()
+//        textFieldVerifyForTextEntry()
         
-        if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text, profileImageView = UIImage.init(base64: "") {
+        if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text {
             
             // call create user (create user authenticates) ****
             
-            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: profileImageView, email: email, password: password, completion: { (user) in
+            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: UIImage(named: "stockUser")!, email: email, password: password, completion: { (user) in
                 
+                print(user)
                 self.performSegueWithIdentifier("toHomeSegue", sender: self)
             })
+            
+//            FIRAuth.auth()?.createUserWithEmail(email, password: password) { (user, error) in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                    return
+//                }
+//                self.setDisplayName(user!)
+//            }
         }
     }
+    
+    
 
     @IBAction func alreadyHaveAccountButtonTapped(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func setDisplayName(user: FIRUser) {
+        
+        let changeRequest = user.profileChangeRequest()
+        changeRequest.displayName = user.displayName
+        changeRequest.commitChangesWithCompletion { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            self.signedIn(FIRAuth.auth()?.currentUser)
+        }
+    }
+    
+    func signedIn(user: FIRUser?) {
+        
+        signedIn = true
+        NSNotificationCenter.defaultCenter().postNotificationName("onSignInCompleted", object: nil, userInfo: nil)
+        performSegueWithIdentifier("toHomeSegue", sender: self)
+        
     }
     
     // MARK: - Image Selection Controller
@@ -201,17 +242,5 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -29,22 +29,22 @@ class UserController {
         })
     }
     
-    static func authUser(email: String, password: String, completion: (user: User?) -> Void) {
+    static func authUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
         FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (firebaseUser, error) in
             if let error = error {
                 print("Wasn't able log user in: \(error.localizedDescription)")
-                completion(user: nil)
+                completion(success: false, user: nil)
             } else if let firebaseUser = firebaseUser {
                 UserController.fetchUserForIdentifier(firebaseUser.uid, completion: { (user) in
                     guard let user = user else {
-                        completion(user: nil)
+                        completion(success: false, user: nil)
                         return
                     }
                     UserController.currentUser = user
-                    completion(user: user)
+                    completion(success: true, user: user)
                 })
             } else {
-                completion(user: nil)
+                completion(success: false, user: nil)
             }
         })
     }

@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		03F9EA3826A63F4B6087C784 /* Pods_BevChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D5BCB1B30F96A3678C4532 /* Pods_BevChat.framework */; };
-		FFADEAB91D1204F30081618B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFADEAB81D1204F30081618B /* GoogleService-Info.plist */; };
 		FFADEABB1D1205DB0081618B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADEABA1D1205DB0081618B /* User.swift */; };
 		FFADEABD1D1205E40081618B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADEABC1D1205E40081618B /* Group.swift */; };
 		FFADEABF1D1205EE0081618B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADEABE1D1205EE0081618B /* Message.swift */; };
 		FFADEAC41D1211800081618B /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADEAC31D1211800081618B /* ImageManager.swift */; };
+		FFADEAC61D1370FD0081618B /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFADEAC51D1370FD0081618B /* GroupDetailViewController.swift */; };
 		FFE0FEE81D10834700376A50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEE71D10834700376A50 /* AppDelegate.swift */; };
 		FFE0FEED1D10834700376A50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE0FEEB1D10834700376A50 /* Main.storyboard */; };
 		FFE0FEEF1D10834700376A50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE0FEEE1D10834700376A50 /* Assets.xcassets */; };
@@ -20,22 +20,22 @@
 		FFE0FEFA1D10975000376A50 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEF91D10975000376A50 /* LogInViewController.swift */; };
 		FFE0FEFC1D10976200376A50 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */; };
 		FFE0FEFE1D10979100376A50 /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */; };
-		FFE0FF001D10979C00376A50 /* DetailGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFF1D10979C00376A50 /* DetailGroupTableViewController.swift */; };
 		FFE0FF021D1097AE00376A50 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */; };
 		FFE0FF061D1097DB00376A50 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF051D1097DB00376A50 /* MessageController.swift */; };
 		FFE0FF081D1097E700376A50 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF071D1097E700376A50 /* UserController.swift */; };
 		FFE0FF0A1D1097F300376A50 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF091D1097F300376A50 /* FirebaseController.swift */; };
+		FFF044BC1D1492C10024EB08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF044BB1D1492C10024EB08 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00D5BCB1B30F96A3678C4532 /* Pods_BevChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BevChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54455ECC0E065D4D8E10EE4D /* Pods-BevChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BevChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-BevChat/Pods-BevChat.release.xcconfig"; sourceTree = "<group>"; };
 		C80C2F360073526D42134E62 /* Pods-BevChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BevChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BevChat/Pods-BevChat.debug.xcconfig"; sourceTree = "<group>"; };
-		FFADEAB81D1204F30081618B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFADEABA1D1205DB0081618B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFADEABC1D1205E40081618B /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FFADEABE1D1205EE0081618B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FFADEAC31D1211800081618B /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		FFADEAC51D1370FD0081618B /* GroupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		FFE0FEE41D10834700376A50 /* BevChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BevChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE0FEE71D10834700376A50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFE0FEEC1D10834700376A50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,11 +45,11 @@
 		FFE0FEF91D10975000376A50 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
-		FFE0FEFF1D10979C00376A50 /* DetailGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailGroupTableViewController.swift; sourceTree = "<group>"; };
 		FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		FFE0FF051D1097DB00376A50 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		FFE0FF071D1097E700376A50 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FFE0FF091D1097F300376A50 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		FFF044BB1D1492C10024EB08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 				FFE0FEEB1D10834700376A50 /* Main.storyboard */,
 				FFE0FEEE1D10834700376A50 /* Assets.xcassets */,
 				FFE0FEF01D10834700376A50 /* LaunchScreen.storyboard */,
-				FFADEAB81D1204F30081618B /* GoogleService-Info.plist */,
+				FFF044BB1D1492C10024EB08 /* GoogleService-Info.plist */,
 				FFE0FEF31D10834700376A50 /* Info.plist */,
 			);
 			path = BevChat;
@@ -139,7 +139,7 @@
 				FFE0FEF91D10975000376A50 /* LogInViewController.swift */,
 				FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */,
 				FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */,
-				FFE0FEFF1D10979C00376A50 /* DetailGroupTableViewController.swift */,
+				FFADEAC51D1370FD0081618B /* GroupDetailViewController.swift */,
 				FFE0FF031D1097B500376A50 /* Cell */,
 			);
 			name = "View Controllers";
@@ -219,7 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFE0FEF21D10834700376A50 /* LaunchScreen.storyboard in Resources */,
-				FFADEAB91D1204F30081618B /* GoogleService-Info.plist in Resources */,
+				FFF044BC1D1492C10024EB08 /* GoogleService-Info.plist in Resources */,
 				FFE0FEEF1D10834700376A50 /* Assets.xcassets in Resources */,
 				FFE0FEED1D10834700376A50 /* Main.storyboard in Resources */,
 			);
@@ -283,8 +283,8 @@
 				FFADEABD1D1205E40081618B /* Group.swift in Sources */,
 				FFE0FF0A1D1097F300376A50 /* FirebaseController.swift in Sources */,
 				FFE0FEFC1D10976200376A50 /* CreateAccountViewController.swift in Sources */,
-				FFE0FF001D10979C00376A50 /* DetailGroupTableViewController.swift in Sources */,
 				FFE0FF081D1097E700376A50 /* UserController.swift in Sources */,
+				FFADEAC61D1370FD0081618B /* GroupDetailViewController.swift in Sources */,
 				FFE0FF061D1097DB00376A50 /* MessageController.swift in Sources */,
 				FFE0FEFE1D10979100376A50 /* GroupListTableViewController.swift in Sources */,
 				FFE0FEFA1D10975000376A50 /* LogInViewController.swift in Sources */,
