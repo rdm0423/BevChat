@@ -15,7 +15,7 @@ class Message: FirebaseType {
     private let kImage = "image"
     private let kTimestamp = "timestamp"
     
-    let sender: String
+    var sender: String
     var messageText: String
     var image: UIImage?
     var timestamp: NSDate

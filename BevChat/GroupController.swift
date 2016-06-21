@@ -13,24 +13,6 @@ class GroupController {
     
     static let kGroup = "groups"
     
-    static func observeGroup(group: Group, completion: (group: [Group]) -> Void) {
-        
-        if let groupID = group.identifier {
-            let groupRef = FirebaseController.ref.child(kGroup).child(groupID)
-            groupRef.observeEventType(.Value, withBlock: { data in
-                guard let groupDicts = data.value as? [String: [String: AnyObject]] else {
-                    completion(group: [])
-                    return
-                }
-                let group = groupDicts.flatMap {Group(dictionary: $1, identifier: $0)}
-                completion(group: group)
-            })
-        } else {
-            print("Could not get current user")
-            completion(group: [])
-        }
-    }
-    
     static func groupArray() -> [Group] {
         
         let beerGroup = Group(name: "Beer")

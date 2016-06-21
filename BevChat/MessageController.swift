@@ -23,28 +23,9 @@ class MessageController {
         }
     }
     
-    static func observeMessages(group: Group, completion: (messages: [Message]) -> Void) {
+    static func observeMessagesInGroup(groupID: String, completion: (messages: [Message]) -> Void) {
         
-        if let groupID = group.identifier {
-            let messageRef = FirebaseController.ref.child(kGroup).child(groupID).child(kMessageIDKey)
-            messageRef.observeEventType(.Value, withBlock: { data in
-                guard let messageDicts = data.value as? [String: [String: AnyObject]] else {
-                    completion(messages: [])
-                    return
-                }
-                let messages = messageDicts.flatMap {Message(dictionary: $1, identifier: $0)}
-                completion(messages: messages)
-            })
-        } else {
-            print("Could not get current user")
-            completion(messages: [])
-        }
-    }
-    
-    // TESTING
-    static func testObserveMessagesInGroup(group: String, completion: (messages: [Message]) -> Void) {
-        
-        let messageIDRef = FirebaseController.ref.child(kGroup).child(group).child(kMessageIDKey)
+        let messageIDRef = FirebaseController.ref.child(kGroup).child(groupID).child(kMessageIDKey)
         messageIDRef.observeEventType(.Value, withBlock: { data in
             guard let messageIdDicts = data.value as? [String: AnyObject] else {
                 completion(messages: [])

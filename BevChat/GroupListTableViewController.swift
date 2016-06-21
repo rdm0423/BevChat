@@ -39,6 +39,12 @@ class GroupListTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        
+        if segue.identifier == "toDetailSegue" {
+            let groupTVC = segue.destinationViewController as? GroupDetailViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let group = GroupController.groupArray()[indexPath.row]
+                groupTVC?.group = group
+            }
+        }
     }
 }

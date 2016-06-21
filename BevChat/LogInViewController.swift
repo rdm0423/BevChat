@@ -19,11 +19,7 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // TESTING
-        
-        MessageController.testObserveMessagesInGroup("-KKV2E-H-EzMSJvSxo1i") { (messages) in
-            print(messages.count)
-        }
+
     }
     
     override func viewDidAppear(animated: Bool) {

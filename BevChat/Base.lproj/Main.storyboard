@@ -135,7 +135,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="pnE-Pf-Qxj" kind="show" id="CcT-V5-NxH"/>
+                                    <segue destination="pnE-Pf-Qxj" kind="show" identifier="toDetailSegue" id="CcT-V5-NxH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -191,6 +191,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pnE-Pf-Qxj" id="Wpz-cX-8r0"/>
+                                    <outlet property="delegate" destination="pnE-Pf-Qxj" id="Drg-KO-lWL"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cla-WO-Yyd">
                                 <rect key="frame" x="20" y="510" width="490" height="30"/>
