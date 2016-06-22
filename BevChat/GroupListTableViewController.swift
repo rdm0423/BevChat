@@ -33,6 +33,9 @@ class GroupListTableViewController: UITableViewController {
 
         return cell
     }
+    
+    @IBAction func logoutButtonTapped(sender: AnyObject) {
+    }
 
     // MARK: - Navigation
 

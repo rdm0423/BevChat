@@ -19,12 +19,14 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = group?.name
 
         // Unwrap group and group.identifier
         if let group = group,
         let groupID = group.identifier {
             MessageController.observeMessagesInGroup(groupID, completion: { (messages) in
-                self.messages = messages
+                self.messages = messages.sort{$0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970}
                 self.tableview.reloadData()
             })
         }
@@ -33,7 +35,7 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBAction func SendButtonTapped(sender: AnyObject) {
         
-
+        messageSend()
     }
     
     // MARK: - Table view data source
@@ -49,7 +51,7 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
         let message = messages[indexPath.row]
         cell.textLabel?.text = message.sender
         cell.detailTextLabel?.text = message.messageText
-        cell.imageView?.image = message.image
+        cell.imageView?.image = message.senderImage
     
         return cell
     }
@@ -70,15 +72,15 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
 //    }
     
     // data: [String : AnyObject]
-//    func messageSend() {
-//        
-//        if let group = group,
-//            let groupID = group.identifier,
-//            let sender = messages.sender,
-//            let messageText = messageTextField.text {
-//            
-//            MessageController.createMessage(groupID, sender: sender, messageText: messageText)
-//        }
-//        
-//    }
+    func messageSend() {
+        
+        if let group = group,
+            let groupID = group.identifier,
+            let sender = UserController.currentUser,
+            let messageText = messageTextField.text {
+            // TODO: Finish functionality when we have view setup to take in a message image
+            MessageController.createMessage(groupID, sender: sender.displayName, messageText: messageText, senderImage: sender.profilePhoto, messageImage: nil)
+        }
+        
+    }
 }

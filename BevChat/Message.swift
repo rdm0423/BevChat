@@ -12,12 +12,14 @@ class Message: FirebaseType {
     
     private let kSender = "sender"
     private let kMessageText = "messageText"
-    private let kImage = "image"
+    private let kSenderImage = "senderImage"
+    private let kMessageImage = "messageImage"
     private let kTimestamp = "timestamp"
     
     var sender: String
+    var senderImage: UIImage?
     var messageText: String
-    var image: UIImage?
+    var messageImage: UIImage?
     var timestamp: NSDate
     var identifier: String?
     
@@ -29,18 +31,23 @@ class Message: FirebaseType {
     var jsonValue: [String : AnyObject] {
         var jsonDictionary: [String: AnyObject] = [kSender : sender, kMessageText : messageText, kTimestamp : timestamp.timeIntervalSince1970]
         
-        guard let imageBase = image?.base64String else {
-            return jsonDictionary
+        if let senderImageBase = senderImage?.base64String {
+           jsonDictionary.updateValue(senderImageBase, forKey: kSenderImage)
         }
-        jsonDictionary.updateValue(imageBase, forKey: kImage)
+        
+        if let messageImageBase = messageImage?.base64String {
+            jsonDictionary.updateValue(messageImageBase, forKey: kMessageImage)
+        }
+        
         return jsonDictionary
     }
     
-    init(sender: String, messageText: String, image: UIImage? = nil) {
+    init(sender: String, messageText: String, senderImage: UIImage? = nil, messageImage: UIImage? = nil) {
         
         self.sender = sender
         self.messageText = messageText
-        self.image = image
+        self.senderImage = senderImage
+        self.messageImage = messageImage
         self.timestamp = NSDate()
     }
     
@@ -55,10 +62,15 @@ class Message: FirebaseType {
         self.messageText = messageText
         self.timestamp = NSDate.init(timeIntervalSince1970: timestamp)
         
-        if let imageString = dictionary[kImage] as? String, let image = UIImage(base64: imageString) {
-            self.image = image
+        if let profileImage = dictionary[kSenderImage] as? String, let image = UIImage(base64: profileImage) {
+            self.senderImage = image
         } else {
-            self.image = UIImage(named: "stockUser")!
+            self.senderImage = UIImage(named: "stockUser")!
+        }
+        if let messageImage = dictionary[kMessageImage] as? String, let image = UIImage(base64: messageImage) {
+            self.messageImage = image
+        } else {
+            self.messageImage = nil
         }
         self.identifier = identifier
     }

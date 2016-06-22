@@ -14,9 +14,9 @@ class MessageController {
     static let kMessageIDKey = "messageIDs"
     static let kGroup = "groups"
     
-    static func createMessage(groupID: String, sender: String, messageText: String, image: UIImage? = nil) {
+    static func createMessage(groupID: String, sender: String, messageText: String, senderImage: UIImage? = nil, messageImage: UIImage? = nil) {
         
-        var message = Message(sender: sender, messageText: messageText, image: image)
+        var message = Message(sender: sender, messageText: messageText, senderImage: senderImage, messageImage: messageImage)
         message.save()
         if let messageID = message.identifier {
             FirebaseController.ref.child(kGroup).child(groupID).child(kMessageIDKey).updateChildValues([messageID: true])

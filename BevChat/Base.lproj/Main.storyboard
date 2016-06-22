@@ -29,7 +29,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfI-50-EdT">
                                 <rect key="frame" x="20" y="219" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxm-6z-Dnm">
                                 <rect key="frame" x="273" y="285" width="54" height="30"/>
@@ -144,7 +144,13 @@
                             <outlet property="delegate" destination="NgE-9s-9sQ" id="klX-As-EcU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="HOME" id="JIY-5J-Hww"/>
+                    <navigationItem key="navigationItem" title="HOME" id="JIY-5J-Hww">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="3O0-xA-WRx">
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="NgE-9s-9sQ" id="7wj-1l-HXC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QN-ye-5Bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="411"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" textLabel="n6u-rS-HwT" detailTextLabel="Es2-FI-wFc" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="Exa-tI-GTH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" textLabel="n6u-rS-HwT" detailTextLabel="Es2-FI-wFc" rowHeight="44" style="IBUITableViewCellStyleSubtitle" id="Exa-tI-GTH">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Exa-tI-GTH" id="rlF-nu-ozq">
@@ -250,6 +256,7 @@
                                 <rect key="frame" x="227" y="65" width="127" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="127" id="CVt-jJ-IE1"/>
+                                    <constraint firstAttribute="height" constant="94" id="UgF-Ep-ptD"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOq-cg-Iwp">
@@ -292,7 +299,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Shn-gz-p8z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="display name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y2T-Cd-ppX">
                                 <rect key="frame" x="20" y="186" width="560" height="30"/>
@@ -324,7 +331,7 @@
                                     <constraint firstAttribute="height" constant="30" id="noD-W4-wuG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7dG-il-gUq">
                                 <rect key="frame" x="20" y="306" width="560" height="30"/>
