@@ -30,6 +30,17 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
                 self.tableview.reloadData()
             })
         }
+        scrollToLastRow()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        var lastIndex = NSIndexPath(forRow: self.messages.count - 1, inSection: 0)
+        
+        if messages.count > 0 {
+            tableview.scrollToRowAtIndexPath(lastIndex, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+        }
         
     }
     
@@ -81,6 +92,11 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
             // TODO: Finish functionality when we have view setup to take in a message image
             MessageController.createMessage(groupID, sender: sender.displayName, messageText: messageText, senderImage: sender.profilePhoto, messageImage: nil)
         }
-        
+        messageTextField.text = ""
+    }
+    
+    func scrollToLastRow() {
+        let indexPath = NSIndexPath(forRow: messages.count - 1, inSection: 0)
+        tableview.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
     }
 }

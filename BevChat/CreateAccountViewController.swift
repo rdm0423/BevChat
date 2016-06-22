@@ -27,6 +27,8 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         
     }
     
+    
+    
     override func viewDidAppear(animated: Bool) {
         if let user = FIRAuth.auth()?.currentUser {
 //            self.signedIn(user)
@@ -39,26 +41,23 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func createAccountButtonTapped(sender: AnyObject) {
-        
+        let todo = ""
+        // TODO uncomment
 //        textFieldVerifyForTextEntry()
         
-        if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text {
+        if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text, profilePhoto = profileImageView.image {
             
-            // call create user (create user authenticates) ****
-            
-            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: UIImage(named: "stockUser")!, email: email, password: password, completion: { (user) in
-                
+            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: profilePhoto, email: email, password: password, completion: { (user) in
                 print(user)
                 self.performSegueWithIdentifier("toHomeSegue", sender: self)
             })
             
-//            FIRAuth.auth()?.createUserWithEmail(email, password: password) { (user, error) in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                    return
-//                }
-//                self.setDisplayName(user!)
-//            }
+//            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: UIImage(named: "stockUser")!, email: email, password: password, completion: { (user) in
+//                
+//                print(user)
+//                self.performSegueWithIdentifier("toHomeSegue", sender: self)
+//            })
+
         }
     }
     
