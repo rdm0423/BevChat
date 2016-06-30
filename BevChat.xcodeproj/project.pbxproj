@@ -21,7 +21,6 @@
 		FFE0FEFA1D10975000376A50 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEF91D10975000376A50 /* LogInViewController.swift */; };
 		FFE0FEFC1D10976200376A50 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */; };
 		FFE0FEFE1D10979100376A50 /* GroupListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */; };
-		FFE0FF021D1097AE00376A50 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */; };
 		FFE0FF061D1097DB00376A50 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF051D1097DB00376A50 /* MessageController.swift */; };
 		FFE0FF081D1097E700376A50 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF071D1097E700376A50 /* UserController.swift */; };
 		FFE0FF0A1D1097F300376A50 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF091D1097F300376A50 /* FirebaseController.swift */; };
@@ -48,7 +47,6 @@
 		FFE0FEF91D10975000376A50 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListTableViewController.swift; sourceTree = "<group>"; };
-		FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		FFE0FF051D1097DB00376A50 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		FFE0FF071D1097E700376A50 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FFE0FF091D1097F300376A50 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
@@ -129,14 +127,6 @@
 			path = BevChat;
 			sourceTree = "<group>";
 		};
-		FFE0FF031D1097B500376A50 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				FFE0FF011D1097AE00376A50 /* MessageTableViewCell.swift */,
-			);
-			name = Cell;
-			sourceTree = "<group>";
-		};
 		FFE0FF041D1097BC00376A50 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +134,6 @@
 				FFE0FEFB1D10976200376A50 /* CreateAccountViewController.swift */,
 				FFE0FEFD1D10979100376A50 /* GroupListTableViewController.swift */,
 				FFADEAC51D1370FD0081618B /* GroupDetailViewController.swift */,
-				FFE0FF031D1097B500376A50 /* Cell */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -300,7 +289,6 @@
 				FFE0FEE81D10834700376A50 /* AppDelegate.swift in Sources */,
 				FFADEABF1D1205EE0081618B /* Message.swift in Sources */,
 				FFADEABB1D1205DB0081618B /* User.swift in Sources */,
-				FFE0FF021D1097AE00376A50 /* MessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
