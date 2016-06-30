@@ -47,7 +47,7 @@ class GroupListTableViewController: UITableViewController {
         let firebaseAuth = FIRAuth.auth()
         do {
             try firebaseAuth?.signOut()
-            dismissViewControllerAnimated(true, completion: nil)
+            self.performSegueWithIdentifier("toLoginSegue", sender: self)            
         } catch let signoutError as NSError {
             print("Error signing out: \(signoutError)")
         }

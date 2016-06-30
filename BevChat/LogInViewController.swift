@@ -34,7 +34,7 @@ class LogInViewController: UIViewController {
                     self.emailTextField.text = ""
                     self.passwordTextField.text = ""
                 } else {
-                    unsuccessfulLogin()
+                    self.unsuccessfulLogin()
                 }
             })
         }
