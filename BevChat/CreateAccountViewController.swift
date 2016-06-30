@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var displayNameTextField: UITextField!
@@ -18,13 +18,18 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var backgroundScrollView: UIScrollView!
+    
     
     var signedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        self.hideKeyboardWhenTappedAround()
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateAccountViewController.keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateAccountViewController.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     
@@ -240,6 +245,39 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         alertController.addAction(dismissAction)
         
         self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Keyboard Scroll
+    
+    func keyboardWillShow(notification:NSNotification) {
+        adjustingHeight(true, notification: notification)
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        adjustingHeight(false, notification: notification)
+    }
+    
+    func adjustingHeight(show:Bool, notification:NSNotification) {
+        
+        let userInfo = notification.userInfo!
+        
+        let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        
+        let changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? 1 : -1)
+        
+        backgroundScrollView.contentInset.bottom += changeInHeight
+        
+        backgroundScrollView.scrollIndicatorInsets.bottom += changeInHeight
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
     }
 
 }

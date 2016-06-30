@@ -14,22 +14,32 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+//    var user = FIRAuth.auth()?.currentUser
     var signedIn = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
 
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let user = FIRAuth.auth()?.currentUser {
-            //            self.signedIn(user)
-        }
+        super.viewDidAppear(animated)
         
+        // If we have the uid stored, the user is already logger in - no need to sign in again!
         
-        
+//        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+//            self.performSegueWithIdentifier("CurrentlyLoggedIn", sender: nil)
+//        }
     }
+//    override func viewWillAppear(animated: Bool) {
+//        if (user != nil) {
+//            print("current user is \(user)")
+//            self.performSegueWithIdentifier("toHomeSegue", sender: self)
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

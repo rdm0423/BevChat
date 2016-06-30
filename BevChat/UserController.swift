@@ -57,6 +57,18 @@ class UserController {
                     return
             }
             completion(user: user)
+            
+            
         })
+    }
+    
+    func saveUserToDefaults() {
+        
+        NSUserDefaults.standardUserDefaults().setObject(<#T##value: AnyObject?##AnyObject?#>, forKey: <#T##String#>)
+    }
+    
+    static func isUserLoggedIn(user: User) -> Bool {
+        
+        
     }
 }

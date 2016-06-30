@@ -25,6 +25,7 @@
 		FFE0FF061D1097DB00376A50 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF051D1097DB00376A50 /* MessageController.swift */; };
 		FFE0FF081D1097E700376A50 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF071D1097E700376A50 /* UserController.swift */; };
 		FFE0FF0A1D1097F300376A50 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE0FF091D1097F300376A50 /* FirebaseController.swift */; };
+		FFEB4E2B1D2585CE007A7968 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB4E2A1D2585CE007A7968 /* ViewControllerExtension.swift */; };
 		FFF044BC1D1492C10024EB08 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFF044BB1D1492C10024EB08 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		FFE0FF051D1097DB00376A50 /* MessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		FFE0FF071D1097E700376A50 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FFE0FF091D1097F300376A50 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		FFEB4E2A1D2585CE007A7968 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		FFF044BB1D1492C10024EB08 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 				FFE0FF071D1097E700376A50 /* UserController.swift */,
 				FFE0FF091D1097F300376A50 /* FirebaseController.swift */,
 				FFADEAC31D1211800081618B /* ImageManager.swift */,
+				FFEB4E2A1D2585CE007A7968 /* ViewControllerExtension.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				FFE0FF061D1097DB00376A50 /* MessageController.swift in Sources */,
 				FFE0FEFE1D10979100376A50 /* GroupListTableViewController.swift in Sources */,
 				FFE0FEFA1D10975000376A50 /* LogInViewController.swift in Sources */,
+				FFEB4E2B1D2585CE007A7968 /* ViewControllerExtension.swift in Sources */,
 				FFADEAC41D1211800081618B /* ImageManager.swift in Sources */,
 				FF58CC7B1D176C3E0094A274 /* GroupController.swift in Sources */,
 				FFE0FEE81D10834700376A50 /* AppDelegate.swift in Sources */,

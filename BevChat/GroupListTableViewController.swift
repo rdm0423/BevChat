@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import Firebase
 
 class GroupListTableViewController: UITableViewController {
 
     var groups = [Group]()
+    var messages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
        groups = GroupController.groupArray()
+        
+        // login
+        if UserController.currentUser != nil {
+            // save NSUserDefaults
+            FIRAuth.auth()?.currentUser?.uid
+            UserController.fetchUserForIdentifier(<#T##identifier: String##String#>, completion: <#T##(user: User?) -> Void#>)
+            return
+        } else {
+            self.performSegueWithIdentifier("toLoginSegue", sender: self)
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -29,12 +42,21 @@ class GroupListTableViewController: UITableViewController {
 
         let group = groups[indexPath.row]
         cell.textLabel?.text = group.name
+        cell.detailTextLabel?.text = "\(messages.count)"
         
 
         return cell
     }
     
     @IBAction func logoutButtonTapped(sender: AnyObject) {
+        
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+            dismissViewControllerAnimated(true, completion: nil)
+        } catch let signoutError as NSError {
+            print("Error signing out: \(signoutError)")
+        }
     }
 
     // MARK: - Navigation
