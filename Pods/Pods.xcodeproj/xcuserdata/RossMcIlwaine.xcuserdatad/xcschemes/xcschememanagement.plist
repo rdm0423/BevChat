@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>IQKeyboardManagerSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-BevChat.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1520003FEBEC114D6C84F832AFEDB994</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D7296DD1796FB74DD9150F3F1BD114D9</key>
+		<key>630DA2CDB042156F2F32C88C65DDDDD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
