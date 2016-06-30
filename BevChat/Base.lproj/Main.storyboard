@@ -271,20 +271,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-KF-ext">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stockUser" translatesAutoresizingMaskIntoConstraints="NO" id="GOZ-vx-iMk">
-                                        <rect key="frame" x="20" y="47" width="100" height="100"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOq-cg-Iwp">
-                                        <rect key="frame" x="99" y="47" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="xaF-Di-OlS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                        <state key="normal" title="+"/>
-                                        <connections>
-                                            <action selector="addProfileImageButtonTapped:" destination="kJf-WK-Aro" eventType="touchUpInside" id="ARq-uq-xgf"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYl-JH-fhx">
                                         <rect key="frame" x="205" y="509" width="190" height="29"/>
                                         <constraints>
@@ -378,6 +364,24 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stockUser" translatesAutoresizingMaskIntoConstraints="NO" id="GOZ-vx-iMk">
+                                        <rect key="frame" x="20" y="47" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="BDe-BH-Eal"/>
+                                            <constraint firstAttribute="height" constant="100" id="BuQ-vm-bVo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOq-cg-Iwp">
+                                        <rect key="frame" x="99" y="47" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="xaF-Di-OlS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="+"/>
+                                        <connections>
+                                            <action selector="addProfileImageButtonTapped:" destination="kJf-WK-Aro" eventType="touchUpInside" id="ARq-uq-xgf"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Y2T-Cd-ppX" firstAttribute="trailing" secondItem="a3D-MI-RvN" secondAttribute="trailing" id="1HH-lD-wNI"/>
@@ -386,7 +390,9 @@
                                     <constraint firstItem="Y2T-Cd-ppX" firstAttribute="leading" secondItem="a3D-MI-RvN" secondAttribute="leading" id="5fN-1d-VRw"/>
                                     <constraint firstItem="2Ts-vN-ZRf" firstAttribute="top" secondItem="F7G-KF-ext" secondAttribute="top" constant="31" id="7Au-CS-09O"/>
                                     <constraint firstItem="tGW-Qj-yVx" firstAttribute="top" secondItem="7dG-il-gUq" secondAttribute="bottom" constant="8" symbolic="YES" id="9hI-PZ-gDv"/>
+                                    <constraint firstItem="GOZ-vx-iMk" firstAttribute="top" secondItem="F7G-KF-ext" secondAttribute="top" constant="47" id="9sa-1v-Hfb"/>
                                     <constraint firstItem="a3D-MI-RvN" firstAttribute="top" secondItem="Y2T-Cd-ppX" secondAttribute="bottom" constant="8" symbolic="YES" id="AkJ-uz-fdt"/>
+                                    <constraint firstItem="GOZ-vx-iMk" firstAttribute="leading" secondItem="F7G-KF-ext" secondAttribute="leading" constant="20" id="Ef7-8Q-mgG"/>
                                     <constraint firstItem="GOZ-vx-iMk" firstAttribute="top" secondItem="F7G-KF-ext" secondAttribute="top" constant="47" id="F35-nW-VIv"/>
                                     <constraint firstItem="zFB-0B-H3v" firstAttribute="centerX" secondItem="bYl-JH-fhx" secondAttribute="centerX" id="FQI-4D-75x"/>
                                     <constraint firstItem="Y2T-Cd-ppX" firstAttribute="top" secondItem="GOZ-vx-iMk" secondAttribute="bottom" constant="24" id="Fr7-xa-7NM"/>
@@ -400,6 +406,7 @@
                                     <constraint firstItem="LOq-cg-Iwp" firstAttribute="leading" secondItem="F7G-KF-ext" secondAttribute="leading" constant="99" id="S4q-2R-5gi"/>
                                     <constraint firstItem="hTc-iU-FGC" firstAttribute="trailing" secondItem="7dG-il-gUq" secondAttribute="trailing" id="VRT-oR-VQs"/>
                                     <constraint firstItem="a3D-MI-RvN" firstAttribute="trailing" secondItem="hTc-iU-FGC" secondAttribute="trailing" id="VoD-af-77c"/>
+                                    <constraint firstItem="Y2T-Cd-ppX" firstAttribute="top" secondItem="GOZ-vx-iMk" secondAttribute="bottom" constant="24" id="VyQ-l4-pqd"/>
                                     <constraint firstItem="GOZ-vx-iMk" firstAttribute="top" secondItem="LOq-cg-Iwp" secondAttribute="top" id="ZY3-EN-2rM"/>
                                     <constraint firstItem="tGW-Qj-yVx" firstAttribute="leading" secondItem="xQf-A0-csY" secondAttribute="leading" id="biu-Gv-em5"/>
                                     <constraint firstItem="xQf-A0-csY" firstAttribute="centerX" secondItem="zFB-0B-H3v" secondAttribute="centerX" id="bos-Fn-7nn"/>
