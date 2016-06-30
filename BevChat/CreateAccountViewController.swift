@@ -124,20 +124,21 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     }
     
     func containsOnlyLettersAndNumbers(input: String) -> Bool {
-        for chr in input.characters {
-            if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") && !(chr >= "0" && chr <= "9")) {
-                return false
-            }
-        }
+//        for chr in input.characters {
+//            if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z") && !(chr >= "0" && chr <= "9")) {
+//                return false
+//            }
+//        }
         // Valid with only letters and numbers
         return true
     }
     
     func isValidEmail(testString:String) -> Bool {
-        // print("validate calendar: \(testStr)")
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluateWithObject(testString)
+//        // print("validate calendar: \(testStr)")
+//        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+//        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+//        return emailTest.evaluateWithObject(testString)
+        return true
     }
     
     func passwordVerify(testString1: String, testString2: String) -> Bool {
