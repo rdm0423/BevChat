@@ -221,6 +221,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     }
     
     func adjustingHeight(show:Bool, notification:NSNotification) {
+        
         if keyboardShown == false {
             let userInfo = notification.userInfo!
             

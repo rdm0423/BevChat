@@ -65,10 +65,26 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
         let message = messages[indexPath.row]
         cell.textLabel?.text = message.sender
         cell.detailTextLabel?.text = message.messageText
+//        cell.detailTextLabel?.font = UIFont.systemFontOfSize(15.0)
+//        cell.detailTextLabel?.numberOfLines = 0
         cell.imageView?.image = message.senderImage
+        cell.imageView?.frame.size = CGSize(width: 20, height: 20)
+        cell.imageView?.contentScaleFactor = 0.5
+        
+        
     
         return cell
     }
+    /*
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    */
+    // MARK: - Functions
     
     func messageSend() {
         
