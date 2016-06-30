@@ -11,7 +11,26 @@ import Firebase
 
 class UserController {
     
-    static var currentUser: User?
+    static let kUser = "userKey"
+    
+    static var currentUser: User? {
+        
+        get {
+            guard let uid = FIRAuth.auth()?.currentUser?.uid,
+                let userDictionary = NSUserDefaults.standardUserDefaults().valueForKey(kUser) as? [String : AnyObject] else {
+                    return nil
+            }
+            return User(dictionary: userDictionary, identifier: uid)
+        } set {
+            if let newValue = newValue {
+                NSUserDefaults.standardUserDefaults().setValue(newValue.jsonValue, forKey: kUser)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            } else {
+                NSUserDefaults.standardUserDefaults().removeObjectForKey(kUser)
+                NSUserDefaults.standardUserDefaults().synchronize()
+            }
+        }
+    }
     
     static func createUser(firstName: String, lastName: String, displayName: String, profilePhoto: UIImage, email: String, password: String, completion: (user: User?) -> Void) {
         FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
@@ -60,15 +79,5 @@ class UserController {
             
             
         })
-    }
-    
-    func saveUserToDefaults() {
-        
-        NSUserDefaults.standardUserDefaults().setObject(<#T##value: AnyObject?##AnyObject?#>, forKey: <#T##String#>)
-    }
-    
-    static func isUserLoggedIn(user: User) -> Bool {
-        
-        
     }
 }

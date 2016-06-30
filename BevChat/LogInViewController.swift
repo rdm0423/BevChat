@@ -14,32 +14,11 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-//    var user = FIRAuth.auth()?.currentUser
-    var signedIn = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        
-
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // If we have the uid stored, the user is already logger in - no need to sign in again!
-        
-//        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
-//            self.performSegueWithIdentifier("CurrentlyLoggedIn", sender: nil)
-//        }
-    }
-//    override func viewWillAppear(animated: Bool) {
-//        if (user != nil) {
-//            print("current user is \(user)")
-//            self.performSegueWithIdentifier("toHomeSegue", sender: self)
-//        }
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,20 +31,13 @@ class LogInViewController: UIViewController {
             UserController.authUser(email, password: password, completion: { (success, user) in
                 if success {
                     self.performSegueWithIdentifier("toHomeSegue", sender: self)
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
                 } else {
-                    // TODO: Present alert saying login was not successful
+                    unsuccessfulLogin()
                 }
             })
         }
-        //        if let email = emailTextField.text, password = passwordTextField.text {
-        //            FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user, error) in
-        //                if let error = error {
-        //                    print(error.localizedDescription)
-        //                    return
-        //                }
-        //                self.signedIn(user)
-        //            })
-        //        }
     }
     
     @IBAction func createButtonTapped(sender: AnyObject) {
@@ -74,16 +46,6 @@ class LogInViewController: UIViewController {
     @IBAction func forgotButtonTapped(sender: AnyObject) {
         
         passwordReset()
-    }
-    
-    
-    
-    func signedIn(user: FIRUser?) {
-        
-        signedIn = true
-        NSNotificationCenter.defaultCenter().postNotificationName("onSignInCompleted", object: nil, userInfo: nil)
-        performSegueWithIdentifier("toHomeSegue", sender: self)
-        
     }
     
     func passwordReset() {
@@ -105,6 +67,19 @@ class LogInViewController: UIViewController {
         prompt.addTextFieldWithConfigurationHandler(nil)
         prompt.addAction(okAction)
         presentViewController(prompt, animated: true, completion: nil);
+    }
+    
+    // MARK: - AlertController
+    
+    func unsuccessfulLogin() {
+        
+        let alertController = UIAlertController(title: "ERROR", message: "Login was not successful, verify your email and password. /n Please try again", preferredStyle: .Alert)
+        
+        let dismissAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        
+        alertController.addAction(dismissAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
 }

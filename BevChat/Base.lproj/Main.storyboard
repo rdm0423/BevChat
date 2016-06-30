@@ -151,6 +151,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Inf-5d-7Qp" kind="presentation" identifier="toLoginSegue" id="BFJ-Rz-2hM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QN-ye-5Bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,7 +430,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="NgE-9s-9sQ" kind="relationship" relationship="rootViewController" id="mkB-Dh-GoW"/>
-                        <segue destination="Inf-5d-7Qp" kind="showDetail" identifier="toLoginSegue" id="PIv-gY-0Sl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJe-Lp-Vqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -440,6 +442,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="a1u-ve-Gkt"/>
-        <segue reference="PIv-gY-0Sl"/>
+        <segue reference="BFJ-Rz-2hM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,10 +19,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var backgroundScrollView: UIScrollView!
-    
-    
-    var signedIn = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,23 +29,14 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateAccountViewController.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    
-    
-    override func viewDidAppear(animated: Bool) {
-        if let user = FIRAuth.auth()?.currentUser {
-//            self.signedIn(user)
-        }
-    }
-    
     @IBAction func addProfileImageButtonTapped(sender: AnyObject) {
         
         imageSelectionAlert()
     }
     
     @IBAction func createAccountButtonTapped(sender: AnyObject) {
-        let todo = ""
-        // TODO uncomment
-//        textFieldVerifyForTextEntry()
+
+        textFieldVerifyForTextEntry()
         
         if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text, profilePhoto = profileImageView.image {
             
@@ -56,42 +44,12 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
                 print(user)
                 self.performSegueWithIdentifier("toHomeSegue", sender: self)
             })
-            
-//            UserController.createUser(firstNameTextField, lastName: lastNameTextField, displayName: displayNameTextField, profilePhoto: UIImage(named: "stockUser")!, email: email, password: password, completion: { (user) in
-//                
-//                print(user)
-//                self.performSegueWithIdentifier("toHomeSegue", sender: self)
-//            })
-
         }
     }
-    
-    
 
     @IBAction func alreadyHaveAccountButtonTapped(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func setDisplayName(user: FIRUser) {
-        
-        let changeRequest = user.profileChangeRequest()
-        changeRequest.displayName = user.displayName
-        changeRequest.commitChangesWithCompletion { (error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            self.signedIn(FIRAuth.auth()?.currentUser)
-        }
-    }
-    
-    func signedIn(user: FIRUser?) {
-        
-        signedIn = true
-        NSNotificationCenter.defaultCenter().postNotificationName("onSignInCompleted", object: nil, userInfo: nil)
-        performSegueWithIdentifier("toHomeSegue", sender: self)
-        
     }
     
     // MARK: - Image Selection Controller
@@ -156,6 +114,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     func isValidDisplayNameAvailible(testString: String) -> Bool {
         
+        // TODO:
         // check it is availible
         // check it is xMin characters
         

@@ -19,16 +19,10 @@ class GroupListTableViewController: UITableViewController {
 
        groups = GroupController.groupArray()
         
-        // login
-        if UserController.currentUser != nil {
-            // save NSUserDefaults
-            FIRAuth.auth()?.currentUser?.uid
-            UserController.fetchUserForIdentifier(<#T##identifier: String##String#>, completion: <#T##(user: User?) -> Void#>)
-            return
-        } else {
+        // Check if user is logged in
+        if UserController.currentUser == nil {
             self.performSegueWithIdentifier("toLoginSegue", sender: self)
         }
-        
     }
 
     // MARK: - Table view data source
