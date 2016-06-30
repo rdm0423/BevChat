@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class CreateAccountViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -19,12 +19,14 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var backgroundScrollView: UIScrollView!
-
+    
+    var keyboardShown = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateAccountViewController.keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateAccountViewController.keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -35,7 +37,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func createAccountButtonTapped(sender: AnyObject) {
-
+        
         textFieldVerifyForTextEntry()
         
         if let displayNameTextField = displayNameTextField.text, firstNameTextField = firstNameTextField.text, lastNameTextField = lastNameTextField.text, email = emailTextField.text, password = passwordTextField.text, profilePhoto = profileImageView.image {
@@ -46,7 +48,7 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
             })
         }
     }
-
+    
     @IBAction func alreadyHaveAccountButtonTapped(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
@@ -210,23 +212,26 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     
     func keyboardWillShow(notification:NSNotification) {
         adjustingHeight(true, notification: notification)
+        keyboardShown = true
     }
     
     func keyboardWillHide(notification:NSNotification) {
         adjustingHeight(false, notification: notification)
+        keyboardShown = false
     }
     
     func adjustingHeight(show:Bool, notification:NSNotification) {
-        
-        let userInfo = notification.userInfo!
-        
-        let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        
-        let changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? 1 : -1)
-        
-        backgroundScrollView.contentInset.bottom += changeInHeight
-        
-        backgroundScrollView.scrollIndicatorInsets.bottom += changeInHeight
+        if keyboardShown == false {
+            let userInfo = notification.userInfo!
+            
+            let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+            
+            let changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? 1 : -1)
+            
+            backgroundScrollView.contentInset.bottom += changeInHeight
+            
+            backgroundScrollView.scrollIndicatorInsets.bottom += changeInHeight
+        }
         
     }
     
@@ -238,5 +243,5 @@ class CreateAccountViewController: UIViewController, UIImagePickerControllerDele
     func textFieldDidEndEditing(textField: UITextField) {
         textField.resignFirstResponder()
     }
-
+    
 }

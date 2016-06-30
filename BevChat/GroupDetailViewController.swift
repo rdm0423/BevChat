@@ -13,6 +13,10 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
 
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableview: UITableView!
+    var container: UIView = UIView()
+    var loadingView: UIView = UIView()
+    var activityIndicator = UIActivityIndicatorView()
+    
     var ref: FIRDatabaseReference!
     var messages = [Message]()
     var group: Group?
@@ -21,15 +25,20 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         
         self.navigationItem.title = group?.name
+        
+        showActivityIndicatory()
+        
 
-        // Unwrap group and group.identifier
+        // Get messages
         if let group = group,
         let groupID = group.identifier {
             MessageController.observeMessagesInGroup(groupID, completion: { (messages) in
                 self.messages = messages.sort{$0.timestamp.timeIntervalSince1970 < $1.timestamp.timeIntervalSince1970}
                 self.tableview.reloadData()
                 self.scrollToBottom()
+                self.hideActivityIndicator()
             })
+            
         }
         
         
@@ -37,17 +46,7 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: self.view.window)
         
     }
-    /*
-    override func viewWillAppear(animated: Bool) {
-        
-        var lastIndex = NSIndexPath(forRow: self.messages.count - 1, inSection: 0)
-        
-        if messages.count > 0 {
-            tableview.scrollToRowAtIndexPath(lastIndex, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-        }
-        
-    }
-    */
+
     @IBAction func SendButtonTapped(sender: AnyObject) {
         
         messageSend()
@@ -71,7 +70,6 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
-    // data: [String : AnyObject]
     func messageSend() {
         
         if let group = group,
@@ -85,12 +83,7 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
         messageTextField.resignFirstResponder()
         scrollToBottom()
     }
-    /*
-    func scrollToLastRow() {
-        let indexPath = NSIndexPath(forRow: messages.count - 1, inSection: 0)
-        tableview.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
-    }
-    */
+
     func scrollToBottom() {
         if messages.count > 0 {
             let indexPath = NSIndexPath(forRow: (messages.count - 1), inSection: 0)
@@ -126,5 +119,41 @@ class GroupDetailViewController: UIViewController, UITableViewDataSource, UITabl
         
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+    }
+    
+    // MARK: - Activity Indicator
+    
+    func showActivityIndicatory() {
+        container.frame = view.frame
+        container.center = view.center
+        container.backgroundColor = UIColorFromHex(0xffffff, alpha: 0.3)
+        
+        loadingView.frame = CGRectMake(0, 0, 80, 80)
+        loadingView.center = view.center
+        loadingView.backgroundColor = UIColorFromHex(0x444444, alpha: 0.7)
+        loadingView.clipsToBounds = true
+        loadingView.layer.cornerRadius = 10
+        
+        activityIndicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+        activityIndicator.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.WhiteLarge
+        activityIndicator.center = CGPointMake(loadingView.frame.size.width / 2,
+                                    loadingView.frame.size.height / 2);
+        loadingView.addSubview(activityIndicator)
+        container.addSubview(loadingView)
+        view.addSubview(container)
+        activityIndicator.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
+        container.removeFromSuperview()
+    }
+    
+    func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
     }
 }

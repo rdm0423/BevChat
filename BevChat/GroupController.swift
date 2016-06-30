@@ -32,4 +32,13 @@ class GroupController {
         
         return [beerGroup, homebrewGroup, whiskeyGroup, wineGroup, sodaGroup]
     }
+    
+    static func fetchMessageIDsForGroupID(groupID: String, completion: (messageIDs: [String]) -> Void) {
+        
+        FirebaseController.ref.child("groups").child(groupID).child("messageIDs").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if let snapshotValue = snapshot.value, messageIDs = snapshotValue as? [String: AnyObject] {
+                completion(messageIDs: Array(messageIDs.keys))
+            }
+        })
+    }
 }
